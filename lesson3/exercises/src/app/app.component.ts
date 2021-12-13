@@ -56,7 +56,7 @@ export class AppComponent {
      this.color = 'green';
      this.height = 0;
      this.width = 0;
-     this.message = 'Shuttle is land.';
+     this.message = 'The shuttle has landed.';
   }
 }
 
