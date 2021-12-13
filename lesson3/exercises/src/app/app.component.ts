@@ -12,4 +12,65 @@ export class AppComponent {
   height = 0;
   width = 0;
   message = 'Space shuttle ready for takeoff!';
+
+  handleTakeOff() {
+    let result = window.confirm('Are you sure the shuttle is ready for takeoff?');
+    if (result) {
+       this.color = 'blue';
+       this.height = 10000;
+       this.width = 0;
+       this.message = 'Shuttle in flight.';
+    }
+ }
+
+ moveRocket(rocketImage, direction) {
+  if (direction === 'right') {
+     let movement = parseInt(rocketImage.style.left) + 10 + 'px';
+     rocketImage.style.left = movement;
+     this.width = this.width + 10000;
+  }
+  
+  else if (direction === 'left') {
+    let movement = parseInt(rocketImage.style.left) + -10 + 'px';
+    rocketImage.style.left = movement;
+    this.width = this.width + 10000;
+  }
+
+  else if (direction === 'up') {
+    console.log("Hi!")
+    let movement = parseInt(rocketImage.style.down) + 10 + 'px';
+    rocketImage.style.down = movement;
+    this.height = this.height + 10000;
+  }
+
+  else if (direction === 'down') {
+    let movement = parseInt(rocketImage.style.down) + -10 + 'px';
+    rocketImage.style.down = movement;
+    this.height = this.height + 10000;
+  }
+ }
+
+ handleLand() {
+  let result = window.confirm('Are you sure the shuttle is ready for land?');
+  if (result) {
+     this.color = 'green';
+     this.height = 0;
+     this.width = 0;
+     this.message = 'Shuttle is land.';
+  }
+}
+
+handleAbortMission() {
+  let result = window.confirm('Confirm that you want to abort the mission?');
+  if (result) {
+     this.color = 'red';
+     this.height = 0;
+     this.width = 0;
+     this.message = 'Mission aborted.';
+  }
+}
+
+
+
+
 }
