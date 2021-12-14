@@ -38,15 +38,15 @@ export class AppComponent {
 
   else if (direction === 'up') {
     console.log("Hi!")
-    let movement = parseInt(rocketImage.style.down) + 10 + 'px';
-    rocketImage.style.down = movement;
+    let movement = parseInt(rocketImage.style.bottom) + 10 + 'px';
+    rocketImage.style.bottom = movement;
     this.height = this.height + 10000;
   }
 
   else if (direction === 'down') {
-    let movement = parseInt(rocketImage.style.down) + -10 + 'px';
-    rocketImage.style.down = movement;
-    this.height = this.height + 10000;
+    let movement = parseInt(rocketImage.style.bottom) + -10 + 'px';
+    rocketImage.style.bottom = movement;
+    this.height = this.height - 10000;
   }
  }
 
